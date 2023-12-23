@@ -1,0 +1,30 @@
+﻿<Page x:Class="DEPO.Pages.OrganizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DEPO.Pages"
+      mc:Ignorable="d" 
+      Height="450" Width="800"
+      Title="OrganizationPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Name="ImportOrganizations" Content="Import Organizations" 
+                Click="ImportOrganizations_Click"/>
+        <Button Grid.Column="1" Name="ExportOrganizations" Content="Export Organizations" 
+                Click="ExportOrganizations_Click"/>
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="2" x:Name="organizationDataGrid" AutoGenerateColumns="True" ItemsSource="{Binding Organizations}" SelectionChanged="organizationDataGrid_SelectionChanged"/>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Добавить организацию" 
+                Click="AddOrganizationButton_Click" 
+                HorizontalAlignment="Center" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
